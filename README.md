@@ -1,3 +1,6 @@
+# Fork of "Orienting Point Clouds with Dipole Propagation" by Metzer et al.
+# Modified only to resolve package version conflicts for compatibility with our code
+
 # Orienting Point Clouds with Dipole Propagation
 <img src='docs/images/output.gif' align="right" width=325>
  Leveraging the power of neural networks and a robust and stable dipole propagation technique.
@@ -86,7 +89,7 @@ Data thanks to [Self-Sampling](https://galmetzer.github.io/self-sample/) [NestiN
 [threedscans](https://threedscans.com/), [COSEG](http://irc.cs.sdu.edu.cn/~yunhai/public_html/ssl/ssd.htm).
 
 # Citation
-If you find this code useful, please consider citing our paper
+If you find this code useful, please consider citing the paper
 ```
 @article{metzer2021orienting,
 author = {Metzer, Gal and Hanocka, Rana and Zorin, Denis and Giryes, Raja and Panozzo, Daniele and Cohen-Or, Daniel},
