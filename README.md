@@ -1,5 +1,22 @@
 # Fork of "Orienting Point Clouds with Dipole Propagation" by Metzer et al.
-# Modified only to resolve package version conflicts for compatibility with our code
+## Modified solely to resolve package version conflicts for compatibility with our code. See the original README below for full details.
+The following changes where applied:
+**File:** `/dipole-normal-prop/utils.py`
+```
+time.clock() -> time.perf_counter()
+torch.arange(n)[mask] -> torch.arange(n, device=mask.device)[mask]
+e, v = torch.symeig(cov, eigenvectors=True) -> e, v = torch.linalg.eigh(cov, UPLO='L')
+```
+
+**File:** `/dipole-normal-prop/inference_utils.py`
+```
+e, v = torch.symeig(cov, eigenvectors=True) -> e, v = torch.linalg.eigh(cov, UPLO='L')
+```
+
+**File:** `/dipole-normal-prop/field_utils.py`
+```
+min_index = np.array([curv[i][0] for i in range(len(all_patches))]) -> min_index = np.array([curv[i][0].cpu().numpy() for i in range(len(all_patches))])
+```
 
 # Orienting Point Clouds with Dipole Propagation
 <img src='docs/images/output.gif' align="right" width=325>
